@@ -2,7 +2,7 @@
     font-family: 'Poppins', sans-serif;
 }
 .index-section-1{
-background-image: url(images/stove.jpg);
+background-image: url(images/refrigerator.jpg);
 min-height: 1000px;
 background-size: cover;
 }
@@ -22,7 +22,7 @@ margin-left: 5%;
 }
 
 .logo h1{
-    font-size: 50px;
+    font-size: 40px;
     align-content: center;
     text-decoration: none;
     color: white;
@@ -35,66 +35,97 @@ margin-left: 5%;
 }
 
 .index-right{
-flex: 70%;
+flex: 40%;
 padding: 100px;
+margin-top: 40px;
+    margin-left: 80px;
+
 }
 
 .index-left{
-    flex: 30%;
+    flex: 60%;
     margin-top: 40px;
     margin-left: 80px;
 }
 
-.index-left h2{
-font-size: 80px;
+.index-right h2{
+font-size: 60px;
 color: white;
 }
 
-.index-left h3{
+.index-right h3{
     font-size: 30px;
     font-weight: 200;
     color: white;
 }
 
-.index-left button{
+.index-right button{
     padding: 20px;
-    font-size: 20px;
+    font-size: 40px;
+    transition: 0.2s;
 }
 
-.index-section-two{
+.index-right button:hover{
+   background-color:rgb(31, 63, 94);
+}
+
+.index-section-2{
     height: 400px;
     display: flex;
+    flex-direction: row;
 }
 
-.button{
-    background-color: #4CAF50; /* Green */
+
+button{
+    background-color: rgb(37, 84, 128);
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 32px;
     margin: 4px 2px;
-    transition-duration: 0.4s;
+    margin-top: 100px;
+    transition-duration: 0.2s;
     cursor: pointer;
+    height: 200px;
+    width: 300px;
+    
 }
-.left-button{
+.left-button button{
     background-color: white; 
     color: black; 
-    border: 2px solid #4CAF50;
+    border: 2px solid rgb(37, 84, 128);
+
 }
 
-.button:hover{
-    background-color: #4CAF50;
+.left-button button:hover{
+    background-color: rgb(37, 84, 128);
     color: white;
 }
 
-.middle-button{
+.middle-button button{
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(37, 84, 128);
 
 }
 
-.right-button{
+.middle-button button:hover{
+    background-color: rgb(37, 84, 128);
+    color: white;
+}
 
+.right-button button{
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgb(37, 84, 128);
+
+}
+
+.right-button button:hover{
+    background-color: rgb(37, 84, 128);
+    color: white;
 }
 
