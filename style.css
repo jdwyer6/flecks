@@ -1,138 +1,21 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body{
+    margin: 0;
     font-family: 'Poppins', sans-serif;
-   
-}
-
-
-.header{
-    height: 60px;
-    background-color: #7AB3BF;
     display: flex;
-    padding: 5px;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-.logo{
-flex: 1;
-margin-left: 5%;
-}
-
-.logo h1{
-    font-size: 30px;
-    text-align: left;
-    align-content: center;
-    text-decoration: none;
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 200;
-}
-
-.main-container{
+.formContainer{
+    background-color: rgb(126, 197, 230);
     display: flex;
-}
-
-.index-right{
-flex: 50%;
-padding: 50px;
-    margin-right: 40px;
-
-}
-
-.index-left{
-    flex: 50%;
-    margin-top: 40px;
-    margin-left: 80px;
-    padding: 50px;
-        margin-left: 40px;
-}
-
-.index-left img{
-    max-height: 450px;
-    margin-top: 100px;
-
-}
-.index-right h2{
-font-size: 60px;
-color: black;
-}
-
-.index-right h3{
-    font-size: 30px;
-    font-weight: 200;
-    color: black;
-}
-
-.index-right button{
-    font-size: 40px;
-    transition: 0.2s;
-}
-
-.index-right button:hover{
-   background-color:rgb(31, 63, 94);
-}
-
-.index-section-2{
-    height: 400px;
-    margin-left: 80px;
-    margin-right: 80px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-
-button{
-    background-color: #0477BF;
-    border: none;
-    color: white;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 32px;
-    margin: 50px 50px 0px 50px;
-    transition-duration: 0.2s;
-    cursor: pointer;
-    height: 200px;
-    width: 300px;
-    
-}
-.left-button button{
-    background-color: #0477BF; 
-    color: white; 
-
-}
-
-.left-button button:hover{
-    background-color: #034b77;
-    color: white;
-}
-
-.middle-button button{
-    background-color: #F29422; 
-    color: white; 
-
-}
-
-.middle-button button:hover{
-    background-color: #945c18;
-    color: white;
-}
-
-.right-button button{
-    background-color: #D90404; 
-    color: white; 
-
-}
-
-.right-button button:hover{
-    background-color: #7c0707;
-    color: white;
-}
-
-
-.index-section-3{
-    height: 400px;
-    background-color: #7AB3BF;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 500px;
+    width: 800px;
+    border-radius: 20px;
 }
