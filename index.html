@@ -8,47 +8,49 @@
     <title>Flecks</title>
 </head>
 <body>
+    <h3>Flecks Appliance Center</h3>
     <div class="formContainer">
+        <p class="invoiceNumText">Invoice #:</p>
+        <p class="invoiceNum">12345</p>
+        <button class="buttonSmall">Edit Invoice #</button>
         <div class="title">
-            <h3>Flecks Appliance Center</h3>
             <p>Invoice</p>
         </div>
-        <form action="/action_page.php">
-            <label for="date">Purchase Date:</label>
-            <input type="date" id="date" name="date"><br>
-            <label for="fname">First name:</label>
-            <input type="text" id="fname" name="fname" value="">
-            <label for="lname">Last name:</label>
-            <input type="text" id="lname" name="lname" value=""><br><br>
-            
-            <label for="address">Address</label>
-            <textarea id="address" name="address" rows="4" cols="50"></textarea><br>
-            <table>
+        <form id="form" onsubmit="saveData()">
+            <input type="date" id="date" name="date" placeholder="date"><br>
+            <input class="fname" type="text" id="fname" name="fname" value="" placeholder="First Name" class="name"><br>
+            <input class="lname" type="text" id="lname" name="lname" value="" placeholder="Last Name" class="name"><br>
+            <textarea class="address" id="address" name="address" rows="4" cols="50" placeholder="Address"></textarea><br>
+            <table class="table">
                 <tr>
-                    <th>Qty</th>
                     <th>Model #</th>
                     <th>Description</th>
+                    <th>Qty</th>
+                    <th>Price</th>
                 </tr>
-                <tr>
+                <tr class="purchaseRow">
                     <td>
-                        <input type="text" id="qty" name="qty" value="">
+                        <input class="model" type="text" id="modelNum" name="modelNum" value="" placeholder="Model #">
                     </td>
                     <td>
-                        <input type="text" id="modelNum" name="modelNum" value="">
+                        <input class="description" type="text" id="description" name="description" value="" placeholder="Description">
                     </td>
                     <td>
-                        <input type="text" id="description" name="description" value="">
+                        <input class="qty" type="text" id="qty" name="qty" value="" placeholder="Qty">
+                    </td>
+                    <td>
+                        <input class="price" type="text" id="price" name="price" value="" placeholder="Price">
                     </td>
                 </tr>
             </table>
-            <label for="notes">Notes</label>
-            <textarea id="notes" name="notes" rows="4" cols="50"></textarea><br>
+            <div class="addRow" onclick="addRow()">+</div>
+            <textarea class="notes" name="notes" rows="4" cols="50" placeholder="Notes"></textarea><br>
             
             <input type="submit" value="Submit" class="button">
+            <button class="button">Print Receipt</button>
+            <button class="button">Delivery Ticket</button>
           </form> 
     </div>
-   
+   <script src="script.js"></script>
 </body>
 </html>
-
-<!--    (add purchase), qty, delivery cost, total, tax -->
