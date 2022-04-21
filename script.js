@@ -17,12 +17,20 @@ function saveData(){
 
     let purchases = {iNum:invoiceNum, fname: fname, lname:lname, address:address, model:model, description:description, qty:qty, price:price}
     tickets.push(purchases)
-
-    console.log(tickets[0].iNum)
+    
     invoiceNum += 1;
-
+    saveStorage();
 }
 
+function saveStorage(){
+    localStorage.setItem("tickets", JSON.stringify(tickets))
+}
+
+function logStorage(){
+    var localS = JSON.parse(localStorage.getItem('tickets'))
+    // console.log(tickets[0].iNum)
+    console.log(localS)
+}
 
 function addRow(){
    var y = table.insertRow()
