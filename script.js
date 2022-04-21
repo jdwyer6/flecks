@@ -15,12 +15,10 @@ function saveData(){
     let price = document.querySelector('.price').value
     let notes = document.querySelector('.notes').value
 
-    let purchases = {model:model, description:description, qty:qty, price:price}
-    let customer = {fname: fname, lname:lname, address:address}
-    tickets.push({invoiceNum, customer, purchases, notes})
+    let purchases = {iNum:invoiceNum, fname: fname, lname:lname, address:address, model:model, description:description, qty:qty, price:price}
+    tickets.push(purchases)
 
-    console.log(tickets)
-    console.log(purchaseRow)
+    console.log(tickets[0].iNum)
     invoiceNum += 1;
 
 }
