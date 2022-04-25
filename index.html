@@ -8,18 +8,26 @@
     <title>Flecks</title>
 </head>
 <body>
+    <div class="navBar">
+        <span class="navLink">Recent Tickets</span>
+        <span class="navLink">Create Invoice</span>
+    </div>
     <h3>Flecks Appliance Center</h3>
     <div class="formContainer">
-        <p class="invoiceNumText">Invoice #:</p>
-        <p class="invoiceNum">12345</p>
-        <button class="buttonSmall">Edit Invoice #</button>
-        <div class="title">
-            <p>Invoice</p>
+        <div class="invoiceNumContainer">
+            <p class="invoiceNumText invoiceItem">Invoice #:</p>
+            <p class="invoiceNum invoiceItem">12345</p>
+            <button class="buttonSmall invoiceItem">Edit</button>
         </div>
-        <form id="form" onsubmit="saveData()">
-            <input type="date" id="date" name="date" placeholder="date"><br>
-            <input class="fname" type="text" id="fname" name="fname" value="" placeholder="First Name" class="name"><br>
-            <input class="lname" type="text" id="lname" name="lname" value="" placeholder="Last Name" class="name"><br>
+       
+        <form id="form">
+            <input class="date" type="date" id="date" name="date" placeholder="date"><br>
+            <div class="nameContainer">
+                <input class="fname names" type="text" id="fname" name="fname" value="" placeholder="First Name" class="name">
+                <input class="lname names" type="text" id="lname" name="lname" value="" placeholder="Last Name" class="name">
+            </div>
+            
+            
             <textarea class="address" id="address" name="address" rows="4" cols="50" placeholder="Address"></textarea><br>
             <table class="table">
                 <tr>
@@ -41,18 +49,24 @@
                     <td>
                         <input class="price" type="text" id="price" name="price" value="" placeholder="Price">
                     </td>
+                    <td><div class="addRow" onclick="addRow()">+</div></td>
                 </tr>
             </table>
-            <div class="addRow" onclick="addRow()">+</div>
+            
             <textarea class="notes" name="notes" rows="4" cols="50" placeholder="Notes"></textarea><br>
             
-            <input type="submit" value="Submit" class="button">
-            <button class="button">Print Receipt</button>
-            <button class="button">Delivery Ticket</button>
+            <div class="buttonContainer">
+                <input type="submit" value="Submit" class="button" onclick="saveData()">
+                <button class="button">Print Receipt</button>
+                <button class="button">Delivery Ticket</button>
+            </div>
+            
           </form> 
     </div>
-    <button class="button" onclick="saveStorage()">Save To Storage</button>
-    <button class="button" onclick="logStorage()">Log Storage</button>
+
+    <div class="allTickets">
+        
+    </div>
    <script src="script.js"></script>
 </body>
 </html>

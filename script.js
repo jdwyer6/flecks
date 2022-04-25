@@ -6,6 +6,7 @@ const table = document.querySelector(".table")
 document.querySelector(".invoiceNum").innerHTML = invoiceNum;
 
 function saveData(){
+    let date = document.querySelector('.date').value
     let fname = document.querySelector('.fname').value
     let lname = document.querySelector('.lname').value
     let address = document.querySelector('.address').value
@@ -15,11 +16,12 @@ function saveData(){
     let price = document.querySelector('.price').value
     let notes = document.querySelector('.notes').value
 
-    let purchases = {iNum:invoiceNum, fname: fname, lname:lname, address:address, model:model, description:description, qty:qty, price:price}
+    let purchases = {iNum:invoiceNum, date:date, fname: fname, lname:lname, address:address, model:model, description:description, qty:qty, price:price, notes: notes}
     tickets.push(purchases)
     
     invoiceNum += 1;
     saveStorage();
+    logStorage();
 }
 
 function saveStorage(){
@@ -28,7 +30,6 @@ function saveStorage(){
 
 function logStorage(){
     var localS = JSON.parse(localStorage.getItem('tickets'))
-    // console.log(tickets[0].iNum)
     console.log(localS)
 }
 
@@ -37,7 +38,11 @@ function addRow(){
    y.innerHTML = "new thing"
 }
 
-
+// tickets.forEach(element => {
+    // Get from local storage
+//     const ticketsContainer = document.createElement("div")
+//     container.classList.add('ticketsContainer')
+// });
 
 
 
