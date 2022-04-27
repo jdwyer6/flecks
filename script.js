@@ -6,6 +6,14 @@ const table = document.querySelector(".table")
 document.querySelector(".invoiceNum").innerHTML = invoiceNum;
 
 function saveData(){
+
+    if(JSON.parse(localStorage.getItem(tickets)) != null){
+        console.log("notNull")
+        tickets = JSON.parse(localStorage.getItem(tickets))
+    }else{
+        console.log("isnull")
+    }
+
     let date = document.querySelector('.date').value
     let fname = document.querySelector('.fname').value
     let lname = document.querySelector('.lname').value
@@ -20,8 +28,11 @@ function saveData(){
     invoiceNum += 1;
 
 
+
     tickets.push(purchases)
-    console.log("Tickets = " + tickets[0].fname)
+    storeTickets = JSON.stringify(tickets)
+    localStorage.setItem("tickets", storeTickets)
+    console.log(localStorage)
 }
 
 function saveStorage(){
