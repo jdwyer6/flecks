@@ -20,12 +20,14 @@ function saveData(){
     tickets.push(purchases)
     
     invoiceNum += 1;
-    saveStorage();
-    logStorage();
+    var storageTickets = JSON.stringify(tickets)
+    localStorage.setItem("tickets", storageTickets)
+    console.log(localStorage)
 }
 
 function saveStorage(){
-    localStorage.setItem("tickets", JSON.stringify(tickets))
+    var storageTickets = JSON.stringify(tickets)
+    localStorage.setItem("tickets", storageTickets)
 }
 
 function logStorage(){
@@ -38,11 +40,17 @@ function addRow(){
    y.innerHTML = "new thing"
 }
 
-// tickets.forEach(element => {
-    // Get from local storage
-//     const ticketsContainer = document.createElement("div")
-//     container.classList.add('ticketsContainer')
-// });
+function addTickets(){
+    tickets.forEach(element => {
+        var localS = JSON.parse(localStorage.getItem('tickets'))
+        const allTicketsSection = document.querySelector('.allTickets')
+    
+        const ticketsContainer = document.createElement("div")
+        container.classList.add('ticketsContainer')
+        document.allTicketsSection.appendChild(ticketsContainer)
+    });
+}
+
 
 
 
