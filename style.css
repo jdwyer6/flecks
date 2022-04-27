@@ -172,9 +172,10 @@ width: 80px;
 }
 
 .allTickets{
-    background-color:rgb(35, 90, 112);
+    background-color: #E2E9F1;
     width: 800px;
     min-height: 200px;
+    margin-top: 50px;
 }
 
 .ticketsContainer{

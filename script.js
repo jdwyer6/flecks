@@ -1,4 +1,4 @@
-const tickets = []
+let tickets = []
 let invoiceNum = 1;
 const purchaseRow = document.querySelector(".purchaseRow")
 const table = document.querySelector(".table")
@@ -17,12 +17,11 @@ function saveData(){
     let notes = document.querySelector('.notes').value
 
     let purchases = {iNum:invoiceNum, date:date, fname: fname, lname:lname, address:address, model:model, description:description, qty:qty, price:price, notes: notes}
-    tickets.push(purchases)
-    
     invoiceNum += 1;
-    var storageTickets = JSON.stringify(tickets)
-    localStorage.setItem("tickets", storageTickets)
-    console.log(localStorage)
+
+
+    tickets.push(purchases)
+    console.log("Tickets = " + tickets[0].fname)
 }
 
 function saveStorage(){
