@@ -42,6 +42,7 @@ function logStorage(){
 }
 
 function clearStorage(){localStorage.clear()}
+
 function addRow(){
    var y = table.insertRow()
    y.innerHTML = "new thing"
@@ -72,16 +73,55 @@ function addTickets(){
 
 
 function displayTickets(){
-    tickets = [JSON.parse(localStorage.getItem('tickets'))]
-    var allTickets = document.querySelector("allTickets")
-    var newDiv = document.createElement('div')
-    newDiv.classList.add('newDiv')
+    x = JSON.parse(localStorage.getItem('tickets'))
+    console.log(x)
+   
     
-    for(let i=0; i<tickets.length; i++){
-        allTickets.appendChild(newDiv)
+    for(let i=0; i<x.length; i++){
+
+                                                                        // Create Div Container for each ticket
+        let allTickets = document.querySelector(".allTickets")
+        let div = document.createElement('div')
+        div.classList.add('newDiv')
+        allTickets.appendChild(div)
+
+                                                                    // Fill in each container with customer info
+        let fname = x[i].fname
+        let lname = x[i].lname
+        let date = x[i].date
+        let inum = x[i].iNum
+
+        let h = document.createElement('h3')
+        h.classList.add('customerName')
+        div.appendChild(h)
+        h.innerHTML = fname + ' ' + lname
+
+        let pdate = document.createElement('p')
+        pdate.classList.add('date')
+        div.appendChild(pdate)
+        pdate.innerHTML = date
+
     }
-    // tickets.forEach((e)=>{
-        
+
+    let customers = [...document.querySelectorAll('.newDiv')]
+    customers.forEach((customer)=>{
+        customer.addEventListener('click', function(){
+            let currentCustomer = document.querySelector('.preview')
+            currentCustomer.classList.remove('hidden')
+
+            let name = customer.querySelector('.customerName').innerHTML
+
+            document.querySelector(".previewCustomerName").innerHTML = name
+
+        })
+    })
+    // tickets.forEach((tick)=>{
+    //     console.log("for each" + tick.fname[i])
     // })
 
+}
+
+function closePreview(){
+    let currentCustomer = document.querySelector('.preview')
+    currentCustomer.classList.add('hidden')
 }
