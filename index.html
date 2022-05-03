@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="navBar">
-        <span class="navLink">Recent Tickets</span>
+        <a href='search.html'><span class="navLink">Search</span></a>
         <span class="navLink">Create Invoice</span>
     </div>
     <!-- <h3>Flecks Appliance Center</h3> -->
@@ -20,11 +20,11 @@
             <button class="buttonSmall invoiceItem">Edit</button>
         </div>
        
-        <form id="form">
+        <form id="form" action="submission.html">
             <input class="date" type="date" id="date" name="date" placeholder="date"><br>
             <div class="nameContainer">
-                <input class="fname names" type="text" id="fname" name="fname" value="" placeholder="First Name" class="name">
-                <input class="lname names" type="text" id="lname" name="lname" value="" placeholder="Last Name" class="name">
+                <input class="fname names" type="text" id="fname" name="fname" value="" placeholder="First Name">
+                <input class="lname names" type="text" id="lname" name="lname" value="" placeholder="Last Name">
             </div>
             
             
@@ -57,11 +57,13 @@
             
             <div class="buttonContainer">
                 <input type="submit" value="Submit" class="button" onclick="saveData()">
-                <button class="button">Print Receipt</button>
-                <button class="button">Delivery Ticket</button>
+                
+                
             </div>
             
           </form> 
+          <button class="button" onclick="saveData()" >Print Receipt</button>
+          <button class="button" onclick="logStorage()">Show Local Storage</button>
     </div>
 
     <div class="allTickets">

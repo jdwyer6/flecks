@@ -4,11 +4,11 @@ body{
     margin: 0;
     font-family: 'Poppins', sans-serif;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     height: 100vh;
     flex-direction: column;
-    background-image: linear-gradient(to right, #E2E9F1, #0E91C7)
+    background-color: #d1f0ff;
 }
 
 p{
@@ -40,6 +40,7 @@ textarea{
     flex-direction: column;
     width: 800px;
     box-shadow: 5px 5px 40px 5px rgba(0, 0, 0, .2);
+    margin-top: 100px;
 }
 
 .button{
@@ -163,6 +164,12 @@ width: 80px;
     border-radius: 50px;
     width: 200px;
     text-align: center;
+
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }
 
 .navLink:hover{
@@ -184,7 +191,11 @@ width: 80px;
     background-color: bisque;
 }
 
-
+.newDiv{
+    background-color:rgb(35, 90, 112);
+    height: 300px;
+    width: 150px;
+}
 
 
 /* Reference https://www.arrowhitech.com/how-to-create-html-contact-forms-and-30-best-free-modern-ones-for-you/ */

@@ -1,50 +1,47 @@
-let tickets = []
+const sTicks = localStorage.getItem('tickets')
+if(sTicks){
+    tickets = JSON.parse(localStorage.getItem("tickets"))
+}else{
+    tickets = []
+}
+
 let invoiceNum = 1;
 const purchaseRow = document.querySelector(".purchaseRow")
 const table = document.querySelector(".table")
 
-document.querySelector(".invoiceNum").innerHTML = invoiceNum;
+// document.querySelector(".invoiceNum").innerHTML = invoiceNum;
 
 function saveData(){
 
-    if(JSON.parse(localStorage.getItem(tickets)) != null){
-        console.log("notNull")
-        tickets = JSON.parse(localStorage.getItem(tickets))
-    }else{
-        console.log("isnull")
-    }
+    let date = document.querySelector('.date')
+    let fname = document.querySelector('.fname')
+    let lname = document.querySelector('.lname')
+    let address = document.querySelector('.address')
+    let model = document.querySelector('.model')
+    let description = document.querySelector('.description')
+    let qty = document.querySelector('.qty')
+    let price = document.querySelector('.price')
+    let notes = document.querySelector('.notes')
 
-    let date = document.querySelector('.date').value
-    let fname = document.querySelector('.fname').value
-    let lname = document.querySelector('.lname').value
-    let address = document.querySelector('.address').value
-    let model = document.querySelector('.model').value
-    let description = document.querySelector('.description').value
-    let qty = document.querySelector('.qty').value
-    let price = document.querySelector('.price').value
-    let notes = document.querySelector('.notes').value
-
-    let purchases = {iNum:invoiceNum, date:date, fname: fname, lname:lname, address:address, model:model, description:description, qty:qty, price:price, notes: notes}
+    let purchase = {iNum:invoiceNum.value, date:date.value, fname:fname.value, lname:lname.value, address:address.value, model:model.value, description:description.value, qty:qty.value, price:price.value, notes:notes.value}
     invoiceNum += 1;
+    
+    
+    tickets.push(purchase)
 
-
-
-    tickets.push(purchases)
+   
     storeTickets = JSON.stringify(tickets)
     localStorage.setItem("tickets", storeTickets)
-    console.log(localStorage)
+    // window.location.href = "TEST.html"
 }
 
-function saveStorage(){
-    var storageTickets = JSON.stringify(tickets)
-    localStorage.setItem("tickets", storageTickets)
-}
+
 
 function logStorage(){
-    var localS = JSON.parse(localStorage.getItem('tickets'))
-    console.log(localS)
+    console.log(localStorage.getItem("tickets"))
 }
 
+function clearStorage(){localStorage.clear()}
 function addRow(){
    var y = table.insertRow()
    y.innerHTML = "new thing"
@@ -64,12 +61,27 @@ function addTickets(){
 
 
 
-
-var form = document.getElementById("form");
-function handleForm(event) { event.preventDefault(); } 
-form.addEventListener('submit', handleForm);
+// var form = document.getElementById("form");
+// function handleForm(event) { event.preventDefault(); } 
+// form.addEventListener('submit', handleForm);
 
 
 // var formData = new FormData(document.querySelector('form'))
 
 // 1Yp4VGfdghOaXJPUIlZczqOenETU1vvzOAxOCIu_9rjY
+
+
+function displayTickets(){
+    tickets = [JSON.parse(localStorage.getItem('tickets'))]
+    var allTickets = document.querySelector("allTickets")
+    var newDiv = document.createElement('div')
+    newDiv.classList.add('newDiv')
+    
+    for(let i=0; i<tickets.length; i++){
+        allTickets.appendChild(newDiv)
+    }
+    // tickets.forEach((e)=>{
+        
+    // })
+
+}
