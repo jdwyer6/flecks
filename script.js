@@ -44,8 +44,20 @@ function logStorage(){
 function clearStorage(){localStorage.clear()}
 
 function addRow(){
-   var y = table.insertRow()
-   y.innerHTML = "new thing"
+    var model = document.querySelector('.model')
+    var description = document.querySelector('.description')
+    var qty = document.querySelector('.qty')
+    var price = document.querySelector('.price')
+   var row = table.insertRow()
+   var cell1 = row.insertCell(0)
+   var cell2 = row.insertCell(1)
+   var cell3 = row.insertCell(2)
+   var cell4 = row.insertCell(3)
+   cell1.innerHTML = model.outerHTML
+   cell2.innerHTML = description.outerHTML
+   cell3.innerHTML = qty.outerHTML
+   cell4.innerHTML = price.outerHTML
+//    row.innerHTML = 'new thing'
 }
 
 function addTickets(){
@@ -124,4 +136,27 @@ function displayTickets(){
 function closePreview(){
     let currentCustomer = document.querySelector('.preview')
     currentCustomer.classList.add('hidden')
+}
+
+function print(){
+    window.print();
+}
+
+function search(){
+
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    // ul = document.getElementById("myUL");
+    li = document.querySelectorAll(".newDiv");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+    
 }
