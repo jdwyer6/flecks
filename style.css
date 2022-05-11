@@ -114,7 +114,7 @@ textarea{
 }
 
 .invoiceItem{
-    margin: 15px 0 5px;
+    margin: 15px 10px;
 }
 
 .names{
@@ -212,17 +212,19 @@ a{
     height: 300px;
     width: 300px;
     margin: 20px;
+    border-radius: 10px;
+}
+
+.newDiv:hover{
+    cursor: pointer;
+    border: 2px solid var(--mediumOrange);
+    margin: 18px;
 }
 
 .customerName{
     text-align: center;
     font-size: 18px;
     font-weight: 500;
-}
-
-.newDiv:hover{
-    cursor: pointer;
-    background-color:#E1E1DF;
 }
 
 .preview{
@@ -266,6 +268,22 @@ a{
 .searchTitle{
     padding: none;
     margin: none;
+}
+
+.xButton{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    text-justify: center;
+    position: relative;
+    left: 90%;
+}
+
+.xButton:hover{
+    background-color: var(--mediumOrange);
+    border-radius: 50%;
+    color: white;
+
 }
 
 /* Reference https://www.arrowhitech.com/how-to-create-html-contact-forms-and-30-best-free-modern-ones-for-you/ */

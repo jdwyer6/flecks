@@ -97,6 +97,12 @@ function displayTickets(){
         div.classList.add('newDiv')
         allTickets.appendChild(div)
 
+        // // Create X button
+        let xButton = document.createElement('div')
+        xButton.classList.add('xButton')
+        div.appendChild(xButton)
+        xButton.innerHTML = "X"
+
                                                                     // Fill in each container with customer info
         let fname = x[i].fname
         let lname = x[i].lname
@@ -160,3 +166,4 @@ function search(){
     }
     
 }
+
