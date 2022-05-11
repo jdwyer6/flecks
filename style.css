@@ -59,8 +59,7 @@ textarea{
     height: 40px;
     width: 150px;
     border-radius: 50px;
-    margin-top: 15px;
-    margin: 15px 10px 20px 80px;
+    margin: 15px 10px 20px 15px;
 }
 
 .button:hover{
@@ -233,6 +232,9 @@ a{
     background-color:bisque;
     position: absolute; 
     top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hidden{
@@ -271,19 +273,21 @@ a{
 }
 
 .xButton{
-    width: 20px;
-    height: 20px;
+    height: 40px;
     text-align: center;
     text-justify: center;
-    position: relative;
-    left: 90%;
+    border-radius: 10px;
+    border: 1px solid rgb(236, 62, 62);
+    background-color: white;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .xButton:hover{
-    background-color: var(--mediumOrange);
-    border-radius: 50%;
+    background-color: rgb(128, 27, 27);
     color: white;
-
+    cursor: pointer;
+    border: none;
 }
 
 /* Reference https://www.arrowhitech.com/how-to-create-html-contact-forms-and-30-best-free-modern-ones-for-you/ */

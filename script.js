@@ -35,8 +35,6 @@ function saveData(){
     // window.location.href = "TEST.html"
 }
 
-
-
 function logStorage(){
     console.log(localStorage.getItem("tickets"))
 }
@@ -49,6 +47,7 @@ function addRow(){
     var qty = document.querySelector('.qty')
     var price = document.querySelector('.price')
    var row = table.insertRow()
+   row.classList.add('purchaseRow')
    var cell1 = row.insertCell(0)
    var cell2 = row.insertCell(1)
    var cell3 = row.insertCell(2)
@@ -97,12 +96,6 @@ function displayTickets(){
         div.classList.add('newDiv')
         allTickets.appendChild(div)
 
-        // // Create X button
-        let xButton = document.createElement('div')
-        xButton.classList.add('xButton')
-        div.appendChild(xButton)
-        xButton.innerHTML = "X"
-
                                                                     // Fill in each container with customer info
         let fname = x[i].fname
         let lname = x[i].lname
@@ -124,25 +117,52 @@ function displayTickets(){
     let customers = [...document.querySelectorAll('.newDiv')]
     customers.forEach((customer)=>{
         customer.addEventListener('click', function(){
+
+                                // Unhide Preview Window
             let currentCustomer = document.querySelector('.preview')
             currentCustomer.classList.remove('hidden')
 
-            let name = customer.querySelector('.customerName').innerHTML
+                                //Grab index of current customer
+            let num = customers.indexOf(customer)
 
+                                //Grab customer information and purchases
+            let name = x[num].fname + " " + x[num].lname
+            let date = x[num].date
+            let address = x[num].address
+            let model = x[num].model
+            let description = x[num].description
+            let qty = x[num].qty
+            let price = x[num].price
+            let notes = x[num].notes
+            
+                                //Set inner HTML to customer info
             document.querySelector(".previewCustomerName").innerHTML = name
+            document.querySelector(".previewDate").innerHTML = date
+            document.querySelector(".previewAddress").innerHTML = address
+            document.querySelector(".previewModel").innerHTML = model
+            document.querySelector(".previewDescription").innerHTML = description
+            document.querySelector(".previewQty").innerHTML = qty
+            document.querySelector(".previewPrice").innerHTML = price
+            document.querySelector(".previewNotes").innerHTML = notes
 
+            let deleteButton = document.querySelector(".xButton")
+            deleteButton.addEventListener("click", function(){
+                alert("Are you sure you want to delete this customer? This cannot be undone.")
+                x.splice(num, 1)
+                storeTickets = JSON.stringify(x)
+                localStorage.setItem("tickets", storeTickets)
+                closePreview()
+                document.location.reload(true)
+            })
         })
     })
-    // tickets.forEach((tick)=>{
-    //     console.log("for each" + tick.fname[i])
-    // })
 
 }
 
 function closePreview(){
     let currentCustomer = document.querySelector('.preview')
     currentCustomer.classList.add('hidden')
-}
+}  
 
 function print(){
     window.print();
