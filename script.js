@@ -150,7 +150,6 @@ function displayTickets(){
 
             let deleteButton = document.querySelector(".xButton")
             deleteButton.addEventListener("click", function(){
-                alert("Are you sure you want to delete this customer? This cannot be undone.")
                 x.splice(num, 1)
                 storeTickets = JSON.stringify(x)
                 localStorage.setItem("tickets", storeTickets)
