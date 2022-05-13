@@ -74,18 +74,6 @@ function addTickets(){
 }
 
 
-
-
-// var form = document.getElementById("form");
-// function handleForm(event) { event.preventDefault(); } 
-// form.addEventListener('submit', handleForm);
-
-
-// var formData = new FormData(document.querySelector('form'))
-
-// 1Yp4VGfdghOaXJPUIlZczqOenETU1vvzOAxOCIu_9rjY
-
-
 function displayTickets(){
     x = JSON.parse(localStorage.getItem('tickets'))
     console.log(x)
@@ -130,6 +118,7 @@ function displayTickets(){
 
                                 //Grab customer information and purchases
             let name = x[num].fname + " " + x[num].lname
+            let iNumber = x[num].iNum
             let date = x[num].date
             let address = x[num].address
             let model = x[num].model
@@ -140,6 +129,7 @@ function displayTickets(){
             
                                 //Set inner HTML to customer info
             document.querySelector(".previewCustomerName").innerHTML = name
+            document.querySelector('.iNumber').innerHTML = iNumber
             document.querySelector(".previewDate").innerHTML = date
             document.querySelector(".previewAddress").innerHTML = address
             document.querySelector(".previewModel").innerHTML = model
@@ -171,7 +161,6 @@ function print(){
 }
 
 function search(){
-
     var input, filter, ul, li, a, i, txtValue;
     input = document.getElementById("myInput");
     filter = input.value.toUpperCase();
