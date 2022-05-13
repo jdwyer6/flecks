@@ -1,15 +1,19 @@
 const sTicks = localStorage.getItem('tickets')
+let invoiceNum
+
 if(sTicks){
     tickets = JSON.parse(localStorage.getItem("tickets"))
+    invoiceNum = tickets.at(-1).iNum + 1
 }else{
     tickets = []
+    invoiceNum = 1;
 }
 
-let invoiceNum = 1;
+console.log(invoiceNum)
 const purchaseRow = document.querySelector(".purchaseRow")
 const table = document.querySelector(".table")
 
-// document.querySelector(".invoiceNum").innerHTML = invoiceNum;
+document.querySelector(".invoiceNum").innerHTML = invoiceNum;
 
 function saveData(){
 
@@ -23,8 +27,7 @@ function saveData(){
     let price = document.querySelector('.price')
     let notes = document.querySelector('.notes')
 
-    let purchase = {iNum:invoiceNum.value, date:date.value, fname:fname.value, lname:lname.value, address:address.value, model:model.value, description:description.value, qty:qty.value, price:price.value, notes:notes.value}
-    invoiceNum += 1;
+    let purchase = {iNum:invoiceNum, date:date.value, fname:fname.value, lname:lname.value, address:address.value, model:model.value, description:description.value, qty:qty.value, price:price.value, notes:notes.value}
     
     
     tickets.push(purchase)
